@@ -1,0 +1,56 @@
+{
+  "id": "redfin",
+  "name": "Redfin Listings",
+  "description": "Fetch Redfin for-sale listings for saved searches and surface only newly-listed homes. Powers a daily 'new listings' digest you can push to yourself.",
+  "contracts": {
+    "tools": [
+      "redfin_search",
+      "redfin_new_listings"
+    ]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "userAgent": {
+        "type": "string",
+        "description": "Browser User-Agent string used for Redfin requests. Leave empty to use a sane default."
+      },
+      "maxResults": {
+        "type": "number",
+        "description": "Maximum listings to fetch per search (default 100).",
+        "default": 100
+      },
+      "searches": {
+        "type": "array",
+        "description": "Saved searches the daily new-listings workflow runs. Get regionId/regionType from a Redfin search URL, e.g. redfin.com/city/16163/WA/Seattle => regionId 16163, regionType 6 (city).",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "regionId", "regionType"],
+          "properties": {
+            "name": { "type": "string", "description": "Friendly label, e.g. \"Seattle SFH under 1M\"." },
+            "regionId": { "type": "number", "description": "Redfin region id from the search URL." },
+            "regionType": { "type": "number", "description": "Redfin region type: 2=zip, 6=city, 5=county, 4=state, 1=neighborhood." },
+            "market": { "type": "string", "description": "Redfin market slug, e.g. \"seattle\" (optional but recommended)." },
+            "minPrice": { "type": "number", "description": "Minimum list price." },
+            "maxPrice": { "type": "number", "description": "Maximum list price." },
+            "minBeds": { "type": "number", "description": "Minimum bedrooms." },
+            "minBaths": { "type": "number", "description": "Minimum bathrooms." },
+            "propertyTypes": {
+              "type": "array",
+              "description": "Property types: 1=House, 2=Condo, 3=Townhouse, 4=Multi-family, 5=Land, 6=Other, 7=Mobile, 8=Co-op. Omit for all.",
+              "items": { "type": "number" }
+            },
+            "maxDaysOnMarket": { "type": "number", "description": "Only include listings on the market <= this many days." }
+          }
+        }
+      }
+    }
+  },
+  "uiHints": {
+    "userAgent": { "label": "User-Agent", "help": "Optional browser UA used for Redfin requests." },
+    "maxResults": { "label": "Max Results", "help": "Listings fetched per search (default 100)." },
+    "searches": { "label": "Saved Searches", "help": "Define one entry per area/criteria. regionId + regionType come from the Redfin search URL." }
+  }
+}

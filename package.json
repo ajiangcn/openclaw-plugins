@@ -6,7 +6,8 @@
   "type": "module",
   "workspaces": [
     "hello-tool",
-    "x-twitter"
+    "x-twitter",
+    "redfin"
   ],
   "scripts": {
     "typecheck": "npm run typecheck --workspaces --if-present"
