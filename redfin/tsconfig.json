@@ -1,0 +1,4 @@
+{
+  "extends": "../tsconfig.base.json",
+  "include": ["index.ts", "runtime-api.ts", "src/**/*.ts"]
+}

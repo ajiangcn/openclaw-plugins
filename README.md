@@ -18,6 +18,7 @@ OpenClaw plugin conventions:
 |--------|----|-------------|
 | [hello-tool](./hello-tool) | `hello-tool` | Example plugin that registers a simple agent tool. |
 | [x-twitter](./x-twitter) | `x-twitter` | OAuth 2.0 PKCE auth + following-timeline reader for X (Twitter). |
+| [redfin](./redfin) | `redfin` | Redfin for-sale listings + daily new-listings digest for saved searches. |
 
 ## Develop
 

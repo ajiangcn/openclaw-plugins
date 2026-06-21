@@ -1,0 +1,21 @@
+{
+  "name": "@ajiangcn/redfin",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Redfin for-sale listings + daily new-listings digest plugin for OpenClaw",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@sinclair/typebox": "0.34.48"
+  },
+  "devDependencies": {
+    "openclaw": "^2026.6.8"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
