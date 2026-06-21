@@ -1,0 +1,18 @@
+{
+  "name": "openclaw-plugins",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Personal monorepo of custom OpenClaw plugins",
+  "type": "module",
+  "workspaces": [
+    "hello-tool",
+    "x-twitter"
+  ],
+  "scripts": {
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "typescript": "5.9.2"
+  }
+}
