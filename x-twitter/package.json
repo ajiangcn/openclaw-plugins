@@ -1,0 +1,21 @@
+{
+  "name": "@ajiangcn/x-twitter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "X/Twitter OAuth + following timeline plugin for OpenClaw",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@sinclair/typebox": "0.34.48"
+  },
+  "devDependencies": {
+    "openclaw": "^2026.6.8"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

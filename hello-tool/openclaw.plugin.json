@@ -1,0 +1,26 @@
+{
+  "id": "hello-tool",
+  "name": "Hello Tool",
+  "description": "Example plugin that registers a simple agent tool.",
+  "contracts": {
+    "tools": [
+      "hello"
+    ]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "greeting": {
+        "type": "string",
+        "description": "Greeting word used by the hello tool."
+      }
+    }
+  },
+  "uiHints": {
+    "greeting": {
+      "label": "Greeting",
+      "help": "Word prefixed to the name, e.g. \"Hello\"."
+    }
+  }
+}

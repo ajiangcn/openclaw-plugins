@@ -1,0 +1,24 @@
+{
+  "name": "@ajiangcn/hello-tool",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Example OpenClaw plugin that registers a simple agent tool",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@sinclair/typebox": "0.34.48"
+  },
+  "devDependencies": {
+    "openclaw": "^2026.6.8"
+  },
+  "openclaw": {
+    "install": {
+      "npmSpec": "@ajiangcn/hello-tool"
+    },
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

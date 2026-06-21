@@ -1,0 +1,37 @@
+{
+  "id": "x-twitter",
+  "name": "X Twitter",
+  "description": "OAuth 2.0 PKCE auth + following timeline reader for X (Twitter). Reads home timeline, following list, and per-user tweets using user-context credentials.",
+  "contracts": {
+    "tools": [
+      "x_auth",
+      "x_following_timeline",
+      "x_get_following",
+      "x_user_tweets"
+    ]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "clientId": {
+        "type": "string",
+        "description": "OAuth 2.0 Client ID from the X Developer Portal."
+      },
+      "clientSecret": {
+        "type": "string",
+        "description": "OAuth 2.0 Client Secret (required for token refresh)."
+      },
+      "callbackPort": {
+        "type": "number",
+        "description": "Local port for the OAuth callback server (default: 47832).",
+        "default": 47832
+      }
+    }
+  },
+  "uiHints": {
+    "clientId": { "label": "Client ID", "help": "From X Developer Portal > Your App > Keys and Tokens > OAuth 2.0 Client ID." },
+    "clientSecret": { "label": "Client Secret", "help": "Required for refreshing access tokens without re-auth." },
+    "callbackPort": { "label": "Callback Port", "help": "Local port used during the OAuth browser flow. Register http://localhost:<port>/callback in your X app settings." }
+  }
+}
